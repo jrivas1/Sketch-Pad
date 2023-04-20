@@ -1,9 +1,9 @@
 body {
     display: flex;
     align-items: center;
-    justify-content: center;
     height: 100vh;
     margin: 0;
+    justify-content: space-between;
 }
 
 .container {
@@ -18,9 +18,33 @@ body {
     flex: 1;
     background-color: lightblue;
     border: 1px solid black;
+    aspect-ratio: 1/1;
+}
+
+.painted {
+    background-color: yellow;
 }
 
 .row {
     display: flex;
     flex: 1;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    flex: 1;
+    padding: 100px;
+}
+.hidden {
+    visibility: hidden;
+}
+
+.sidebar button {
+    height: 60px;
+    aspect-ratio: 16 / 10;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
 }
