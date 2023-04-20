@@ -3,18 +3,18 @@
 
 const container = document.querySelector(".container");
 const sizeButton = document.querySelector("#sizeButton");
-renderGrid(16, 16);
+renderGrid(16);
 
-function renderGrid(height, width) {
-    if (!Number.isInteger(height) || !Number.isInteger(width)) {
-        console.warn(`Invalid height and width! Inputs: ${width}, ${height}`)
+function renderGrid(size) {
+    if (!Number.isInteger(size) || size > 100 || size < 1) {
+        console.warn(`Invalid size! Inputs: ${size}`)
         return;
     }
     let rows = [];
-    for (let i = 0; i < width; i++) {
+    for (let i = 0; i < size; i++) {
         let row = document.createElement("div");
         row.classList.add("row");
-        for (let j = 0; j < height; j++) {
+        for (let j = 0; j < size; j++) {
             let newBox = document.createElement("div");
             newBox.classList.add("cell");
             row.appendChild(newBox);
@@ -44,7 +44,6 @@ container.addEventListener("mouseleave", e => {
 });
 
 sizeButton.addEventListener("click", () => {
-    let width = prompt("Width?");
-    let height = prompt("Height?");
-    renderGrid(width, height);
+    let size = prompt("Size?");
+    renderGrid(+size);
 })

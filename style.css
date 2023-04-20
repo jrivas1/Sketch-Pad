@@ -16,13 +16,12 @@ body {
 
 .cell {
     flex: 1;
-    background-color: lightblue;
     border: 1px solid black;
     aspect-ratio: 1/1;
 }
 
 .painted {
-    background-color: yellow;
+    background-color: black;
 }
 
 .row {
